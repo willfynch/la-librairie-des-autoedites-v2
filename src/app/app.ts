@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { URLS } from './shared/constants';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -13,6 +12,7 @@ export class App {
   protected readonly http = inject(HttpClient);
 
   posts: any[] = [];
+  protected readonly FORM_LINK = URLS.BOOK_SUBMISSION_FORM;
 
   ngOnInit() {
     // This data will be fetched at build time
